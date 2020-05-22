@@ -1,0 +1,39 @@
+Explanation of the output
+
+1.Create an Alberta and BC data frame and combine it with the jobs dataset
+
+Given data set already contains the BC and Alberta data, hence it has been removed.
+A csv 2states.csv was read and dataframe has been created.
+Next, date has been formatted. Library "lubridate" has been used to format the date.
+Lastly, a final data frame has been created using the previously created 3 data frames (using column bind for cleaned jobs, 2 states and formatted date).
+
+
+2.Find the month with the highest total employment across the states.
+max() can be used to find the maximum value in a column.
+Date and maximum of each province has been calculated using the following command.
+
+Command:
+
+BCmax = max(FinalDataFrame$BC)
+View(filter(FinalDataFrame,FinalDataFrame$BC==BCmax)[,c(5,7)]).
+.
+.
+.
+and similarly for other provinces.
+
+
+3.Find the months in which employment figures in Atlantic went below 950.
+filter() has been used to find the values less than 950 (as requested)
+
+
+Command:
+
+View(cbind(FinalDataFrame[,4],FinalDataFrame[FinalDataFrame$Atlantic<950,7]))
+
+
+4. Sort the figures for Quebec in ascending order
+order() has been used while setting the decreasing parameter to FALSE in order to sort the Quebec data in ascending order.
+
+Command:
+
+View(FinalDataFrame[order(FinalDataFrame$Quebec, decreasing = FALSE),])

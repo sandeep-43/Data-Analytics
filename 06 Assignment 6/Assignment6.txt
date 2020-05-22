@@ -1,0 +1,24 @@
+setwd("D:/Docs/Sandeep/Colleges/Lambton/Term 2/2018S-T2 BDM 1053 - Big Data Algorithms and Statistics 01/Assignments/06 Assignment 6/")
+titanic = read.csv("titanic.csv")
+titanic_copy = titanic
+View(titanic_copy)
+
+#Task 1: Draw a box plot for 
+#Task 1.1: class VS survived
+
+titanic_copy$Class_copy = as.integer(titanic_copy$Class)
+titanic_copy$Survived_copy = as.integer(titanic_copy$Survived)
+boxplot(Survived_copy~Class_copy, data = titanic_copy, main = "Class v/s Survived" ,xlab="Survived", ylab="Class")v/s Survived" ,xlab="Class", ylab="Survived")
+
+#Task 1.2: Age vs Sex
+titanic_copy$Age_integer = as.integer(titanic_copy$Age)
+titanic_copy$Sex_int = as.integer(titanic_copy$Sex)
+boxplot(Age_integer~Sex_int,data = titanic_copy, main= "Age v/s Sex" ,xlab="Age", ylab="Sex")
+
+View(titanic_copy)
+
+#Task 2: Create correlation matrix for mtcars and analyse 
+#which variables are linearly correlated and document the analysis.
+
+library(corrgram)
+corrgram(mtcars)
